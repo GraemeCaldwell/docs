@@ -12,11 +12,11 @@ title: 'How to Find Large Files in Linux'
 h1_title: 'How to Find Large Files in Linux'
 enable_h1: true
 external_resources:
- - '[du man page](https://man7.org/linux/man-pages/man1/du.1.html)',
+ - '[du man page](https://man7.org/linux/man-pages/man1/du.1.html)'
  - '[find man page](https://man7.org/linux/man-pages/man1/find.1.html)'
 ---
 
-In this guide, we explain how to find large files from the Linux command line. Finding large files is a common server administration task. It is often useful for identifying large log files, media files, and other data consuming excessive disk space.
+In this guide, we explain how to find large files from the Linux command line. Finding large files is a common server administration task. It is often helpful for identifying large log files, media files, and other data consuming excessive disk space.
 
 ## Before You Begin
 
