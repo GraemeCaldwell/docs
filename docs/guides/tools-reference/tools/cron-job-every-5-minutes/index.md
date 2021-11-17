@@ -27,7 +27,8 @@ Cron is a command-line job scheduler for Linux and other Unix-like operating sys
 
 ## Crontab Basics
 
-Cron jobs are scheduled in the crontab (cron table) file, which is edited with the `crontab` command. The crontab file consists of multiple lines, each with six fields separated by white space. The first five fields are date and time fields, and the sixth field is the command to be run.
+Cron jobs are scheduled in the crontab (cron table) file. The crontab file consists of multiple lines, each with six fields separated by white space. The first five fields are date and time fields, and the sixth field is the command to be run.
+
 The date and time fields tell cron when to run the command. From left to right, they indicate:
 
 * Minute of the hour (0-59)
@@ -67,6 +68,8 @@ Open crontab for editing in the text editor specified in your environment's VISU
 Replace COMMAND with the command or script you would like to run. For example, if you would like to download data from a URL every five minutes, the crontab line might read:
 
     */5 * * * * curl http://example.com
+
+These commands combine the * syntax, which is shorthand for a range that includes all values for that field, with the step value syntax discussed above.  
 
 3. Save the file and close the editor. The `crontab` tool automatically installs and activates the new crontab file.
 
