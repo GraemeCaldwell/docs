@@ -127,23 +127,23 @@ In this section, you will create a directory for the binary files and install Ap
 apache-zookeeper-3.6.3-bin.tar.gz: OK
 {{< /output >}}
 
-    If the message digest generated from the downloaded file does not match, the ZooKeeper files may have have been corrupted or modified.
+    If the message digest generated from the downloaded file does not match, the ZooKeeper files may have been corrupted or modified.
 
     {{< output >}}
 apache-zookeeper-3.6.3-bin.tar.gz: FAILED
 sha512sum: WARNING: 1 computed checksum did NOT match
 {{< /output >}}
 
-7.  Extract the binaries from the tarball and then delete it:
+6.  Extract the binaries from the tarball and then delete it:
 
         sudo tar -xvf apache-zookeeper-3.6.3-bin.tar.gz
         sudo rm apache-zookeeper-3.6.3-bin.tar.gz
 
-8.  Give the `zookeeper` user ownership of the files so it can execute them:
+7.  Give the `zookeeper` user ownership of the files so it can execute them:
 
         sudo chown zookeeper:zookeeper -R apache-zookeeper-3.6.3-bin
 
-9.  Create a symbolic link to the ZooKeeper directory and assign ownership to the `zookeeper` user. This will allow you to use a shorter directory name and allow the directory to remain consistent when you update ZooKeeper.
+8.  Create a symbolic link to the ZooKeeper directory and assign ownership to the `zookeeper` user. This will allow you to use a shorter directory name and allow the directory to remain consistent when you update ZooKeeper.
 
         sudo ln -s apache-zookeeper-3.6.3-bin zookeeper
         sudo chown -h zookeeper:zookeeper zookeeper
@@ -230,7 +230,7 @@ WantedBy=default.target
 
     The file specifies the user ZooKeeper should be started by and links `systemctl` commands to the equivalent `zkServer.sh` commands. It also tells `systemd` when to start ZooKeeper in the boot process. 
 
-3.  Start ZooKeeper with `systemctl`:
+3. Start ZooKeeper with `systemctl`:
 
         sudo systemctl start zookeeper
 
@@ -280,7 +280,7 @@ server.3=node_3:2888:3888
 
     As you can see, the first three lines are identical to the standalone configuration. To create a multi-node cluster, we add `initLimit` to specify how long the initial synchronization can take and `syncLimit` to specify how much time can expire between requests and their acknowledgment. Finally, we add the connection details for each node in the cluster.
 
-3.  In `zoo.cfg`,  we defined three nodes called `server.1`, `server.2`, etc. To complete the cluster configuration, we must also tell each node which of these represents itself. This is achieved by creating a `myid` file in each node's data directory.
+4.  In `zoo.cfg`,  we defined three nodes called `server.1`, `server.2`, etc. To complete the cluster configuration, we must also tell each node which of these represents itself. This is achieved by creating a `myid` file in each node's data directory.
 
         sudo vim /var/zookeeper/myid
 
